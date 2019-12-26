@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="div1" th:each="users:${users}">
+		<img class="logo" th:src="@{image/logo.png}" />
+		<h1>パソコン貸出ステ－ジへようこそ</h1>
+		<a th:href="@{/userpage}"><img class="user" th:src="@{image/userlogo.png}"></a>
+		<a th:href="@{/userpage}" th:text="${users.username}" class="username"></a>
+	</div>
+	<div class="div2">
+		<form th:action="toRent" th:method="post">
+			<table>
+				<tr>
+					<td>ユーザー名:</td>
+					<td><input type="text" id="username" name="username" th:value="${username}" readonly="readonly"/></td>
+				</tr>
+				<tr>
+					<td>パソコン番号</td>
+					<td><input type="text" id="cid" name="cid" th:value="${cid}" readonly="readonly"/></td>
+				</tr>
+				<tr>
+					<td>借りる日付</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>予定使う時間</td>
+					<td></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

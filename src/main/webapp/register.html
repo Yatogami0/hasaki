@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="css/register.css">
+<head>
+<meta charset="UTF-8">
+<title>パソコン貸出ステ－ジ</title>
+</head>
+<body>
+	<div class="div1">
+		<a th:href="@{/index}"><img class="logo" th:src="@{image/logo.png}" /></a>
+		<h1>パソコン貸出ステ－ジへようこそ</h1>
+	</div>
+	<div class="div2">
+		<div class="registertable">
+			<form th:action="toregister" th:method="post">
+				<table>
+					<tr>
+						<td>ユーザー名:</td>
+						<td><input type="text" id="username" name="username" /></td>
+					</tr>
+					<tr>
+						<td>電話番号:</td>
+						<td><input type="text" id="utel" name="utel" /></tr>
+					<tr>
+						<td>メールアドレス:</td>
+						<td><input type="text" id="uemail" name="uemail" /></td>
+					</tr>
+					<tr>
+						<td>本当の名前:</td>
+						<td><input type="text" id="realname" name="realname" /></td>
+					</tr>
+					<tr>
+						<td>パスワード:</td>
+						<td><input type="password" id="password" name="password" /></td>
+					</tr>
+					<tr>
+						<td>パスワードの確認:</td>
+						<td><input type="password" id="password1" name="password1" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="登録" class="submit"/></td>
+					</tr>
+
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

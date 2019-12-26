@@ -1,0 +1,57 @@
+.div1{
+	width: 90%;
+	height: 73px;
+	margin-top: 1%;
+	margin-left: 5%;
+}
+
+h1{
+	margin-left:26%;
+	font-size:45px;
+	background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAHklEQVQImWNkYGBgYGD4//8/A5wF5SBYyAr+//8PAPOCFO0Q2zq7AAAAAElFTkSuQmCC) repeat;
+	text-shadow: 5px -5px black, 4px -4px white;
+	font-weight: bold;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+.logo{
+	padding-left: 1%;
+	width:110px;
+	height:80px;
+	float:left;
+	cursor:pointer;
+}
+
+.div2{
+	background-image:url(../image/00003.jpg);
+	background-size: cover;
+	width: 98%;
+	height:800px;
+	margin-left: 1%;
+}
+
+.registertable{
+	padding-top: 2%;
+	margin-left: 40%;
+	width: 400px;
+	height: 280px;
+}
+
+td:nth-of-type(odd){
+	font-size:25px;
+	color: transparent;
+	-webkit-text-stroke: 1px red;
+	letter-spacing: 0.04em;
+}
+
+table{
+	border-spacing:0px 30px;
+}
+
+.submit{
+	font-size:25px;
+	width:400px;
+	background:red;
+	cursor:pointer;
+}

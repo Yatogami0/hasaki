@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="css/userpage.css">
+<SCRIPT src="js/userpage.js" type=text/javascript></SCRIPT>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="div1">
+		<img class="logo" th:src="@{image/logo.png}" />
+		<h1>パソコン貸出ステ－ジへようこそ</h1>
+	</div>
+	<div class="div2">
+		<div class="leftmenu">
+			<table>
+				<tr th:each="users:${users}">
+					<td><img  class="user" th:src="@{image/userlogo.png}"></td>
+					<td th:text="${users.username}"></td>
+				</tr>
+				<tr>
+					<td colspan="2" onclick="a1()" class="click">個人情報</td>
+				</tr>
+				<tr>
+					<td colspan="2">個人情報の修正
+						<ul>
+							<li onclick="a2()" class="click">パスワードの変更</li>
+							<li onclick="a3()" class="click">メールアドレスの変更</li>
+							<li onclick="a4()" class="click">電話番号の変更</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" onclick="a5()" class="click">注文歴史
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="rightmenu"  id="a1">
+			<table th:each="users:${users}">
+				<tr>
+					<td>ユーザー名:</td>
+					<td th:text="${users.username}"></td>
+				</tr>
+				<tr>
+					<td>電話番号:</td>
+					<td th:text="${users.utel}"></td>
+				</tr>
+				<tr>
+					<td>メールアドレス:</td>
+					<td th:text="${users.uemail}"></td>
+				</tr>
+				<tr>
+					<td>本当の名前:</td>
+					<td th:text="${users.realname}"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="rightmenu"  id="a2">
+			<form th:action="updatePassword" th:method="post">
+				<table th:each="users:${users}">
+					<tr>
+						<td>前のパスワード:</td>
+						<td><input type="password" id="oldPassword" name="oldPassword" /></td>
+					</tr>
+					<tr>
+						<td>新しいパスワード:</td>
+						<td><input type="password" id="password" name="password" /></td>
+					</tr>
+					<tr>
+						<td>確認パスワード:</td>
+						<td><input type="password" id="password1" name="password1" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="修正します" class="submit"/></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<div class="rightmenu"  id="a3">
+			<form th:action="updateEmail" th:method="post">
+				<table th:each="users:${users}">
+					<tr>
+						<td>使っているのメールアドレス:</td>
+						<td th:text="${users.uemail}"></td>
+					</tr>
+					<tr>
+						<td>新しいメールアドレス:</td>
+						<td><input type="text" id="uemail" name="uemail" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="修正します" class="submit"/></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<div class="rightmenu"  id="a4">
+				<form th:action="updateTel" th:method="post">
+				<table th:each="users:${users}">
+					<tr>
+						<td>使っているの電話番号:</td>
+						<td th:text="${users.utel}"></td>
+					</tr>
+					<tr>
+						<td>新しい電話番号:</td>
+						<td><input type="text" id="utel" name="utel" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="修正します" class="submit"/></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		<div class="rightmenu"  id="a5">
+				<table>
+				<tr>
+					<th>注文番号</th>
+					<th>借りたデート</th>
+					<th>予定の時間</th>
+					<th>操作</th>
+				</tr>
+				<tr th:if="${userRent!=null}" th:each="userRent:${userRent}">
+					<td th:text="${userRent.rid}"></td>
+					<td th:text="${userRent.outtime}"></td>
+					<td th:text="${userRent.day}"></td>
+					<td th:if="${userRent.rstate} eq '未完成'"><a th:href="@{/back(id=${userRent.rid})}">パソコンを返す</a></td>
+					<td th:if="${userRent.rstate} eq '完成した'" th:text="${userRent.rstate}"></td>
+				</tr>
+				<tr th:if="${userRnet==null}">
+					<td colspan="4">まだ注文しません</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

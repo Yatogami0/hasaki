@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="div1" th:each="users:${users}">
+		<img class="logo" th:src="@{image/logo.png}" />
+		<h1>パソコン貸出ステ－ジへようこそ</h1>
+		<a th:href="@{/userpage}"><img class="user" th:src="@{image/userlogo.png}"></a>
+		<a th:href="@{/userpage}" th:text="${users.username}" class="username"></a>
+	</div>
+	<div class="div2">
+		<table>
+			<tr>
+				<th>番号</th>
+				<th>パソコンの種類</th>
+				<th>CPU</th>
+				<th>ビデオカード</th>
+				<th>操作</th>
+			</tr>
+			<tr th:each="computer:${computer}">
+				<td th:text="${computer.cid}"></td>
+				<td th:text="${computer.ctype}"></td>
+				<td th:text="${computer.cpu}"></td>
+				<td th:text="${computer.gpu}"></td>
+				<td th:if="${computer.cstate} eq '在庫'"><a th:href="@{/rent(cid=${computer.cid})}">借りる</a></td>
+				<td th:if="${computer.cstate} eq '貸出中'">貸出中</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

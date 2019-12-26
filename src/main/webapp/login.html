@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<head>
+<meta charset="UTF-8">
+<title>パソコン貸出ステ－ジ</title>
+</head>
+<body>
+	<div class="div1">
+		<a th:href="@{/index}"><img class="logo" th:src="@{image/logo.png}" /></a>
+		<h1>パソコン貸出ステ－ジへようこそ</h1>
+	</div>
+	<div class="div2">
+		<div class="logintable">
+			<form th:action="toLogin" th:method="post">
+				<p>パソコン貸出ステ－ジ</p><br/>
+				<span> ユーザー名:</span>&nbsp;&nbsp;<input type="text" id="username" name="username" /><br/><br/><br/>
+				<span>パスワード:</span>&nbsp;&nbsp;<input type="password" id="password" name="password" /><br/><br/><br/><br/>
+				<input type="submit" value="ログイン" class="submit" /><br/><br/>
+				<a th:href="register">クリックして登録します</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

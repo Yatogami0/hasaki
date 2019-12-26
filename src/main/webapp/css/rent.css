@@ -1,0 +1,54 @@
+body{
+	background-image:url(../image/background.png);
+	background-size: cover;
+}
+
+.div1{
+	width: 90%;
+	height: 73px;
+	margin-top: 1%;
+	margin-left: 5%;
+	float:left;
+}
+
+h1{
+	margin-left:26%;
+	font-size:45px;
+	background: #EEE url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAHklEQVQImWNkYGBgYGD4//8/A5wF5SBYyAr+//8PAPOCFO0Q2zq7AAAAAElFTkSuQmCC) repeat;
+	text-shadow: 5px -5px black, 4px -4px white;
+	font-weight: bold;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	float:left;
+}
+
+.logo{
+	padding-top:1.6%;
+	padding-left: 1%;
+	width:110px;
+	height:80xp;
+	float:left;
+	cursor:pointer;
+}
+
+ .user{
+ 	position:absolute;
+ 	padding-top:2%;
+ 	padding-left:22%;
+ 	width:44px;
+ 	height:51px;
+ 	float:left;
+ }
+ .username{
+ 	position:absolute;
+ 	padding-top:4.2%;
+ 	padding-left:21.2%;
+ 	float:left;
+ }
+
+ .div2{
+	width: 98%;
+	height:800px;
+	padding-top:10%;
+	margin-left: 20%;
+}
